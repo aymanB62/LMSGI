@@ -1,0 +1,23 @@
+p.tnr{
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    font-weight: bold;
+}
+h1.titulo1{
+    text-transform: capitalize;
+    color: rgb(0, 162, 255)
+}
+#especial{
+    letter-spacing: 3px;
+    word-spacing: 8px;
+    text-indent: 10px;
+}
+h3.h3esp{
+    width: 30%;
+    text-align: right;
+}
+p.pesp{
+    width: 300px;
+    text-align: justify;
+    background-color: yellow;
+}

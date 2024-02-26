@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<!--Hacer los siguientes cambios basándose en el XSD del la actividad 13 (punto 4).
+
+El nombre de la empresa tiene que tener al menos 3 caracteres y máximo 15. El tipo tiene que ser de cadena.
+El NIF de la empresa tiene que ir como atributo de la etiqueta "empresa" y tener exactamente 9 caracteres. Será obligatorio
+El tipo de vía de la dirección de la empresa solo puede ser "calle", "plaza", "via" o "camino"
+El DNI del empleado tiene que ir como atributo y tener exactamente 8 caracteres. Sera obligatorio.
+La dirección del empleado tiene que tener como máximo 250 caracteres
+El salario del empleado tiene que estar comprendido entre 900 euros y 5000 euros 
+La etiqueta "estaCasado" del empleado tiene que ser de autocierre y será optativa.
+La empresa podrá tener un atributo optativo que sea la fecha de creación.
+El capital social de la empresa ahora será de tipo simple, tendrá un atributo "moneda" que podrá ser solamente "euros", "dolares" o 
+"yenes". Dentro del capital social tendrá un valor que será de tipo double con un valor mínimo de 3000. 
+Ej: <capital_social moneda="euros">50000</capital_social>
+La entidad españa ya no estará, en su lugar la etiqueta empresa tendrá que tener un atributo "pais" que siempre tendrá que tener el valor "españa"-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="empresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="3"/>
+                    <xs:maxLength value="15"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="NIF">
+          <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:minInclusive value="9"></xs:minInclusive>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="espanola" type="xs:boolean"/>
+        <xs:element name="capitalSocial">
+            <xs:simpleContent>
+              <xs:extension base="xs:double">
+                <xs:attribute name="moneda" use="required" minInclusive = "3000">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="euros"/>
+                      <xs:enumeration value="dolares"/>
+                      <xs:enumeration value="yenes"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:simpleContent>
+        </xs:element>
+        <xs:element name="direccion" minOccurs="1">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="calle"/>
+                <xs:enumeration value="plaza"/>
+                <xs:enumeration value="via"/>
+                <xs:enumeration value="camino"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipoVia" type="xs:string"/>
+              <xs:element name="nombreVia" type="xs:string"/>
+              <xs:element name="CP" type="xs:string"/>
+              <xs:element name="pais" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+          
+        </xs:element>
+        <xs:element name="empleados">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="empleado" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="apellidos" type="xs:string" minOccurs="2"/>
+                    <xs:element name="extranjero" type="xs:boolean"/>
+                    <xs:element name="fechaNacimiento" type="xs:date"/>
+                    <xs:element name="salario"/>
+                    <!--El salario del empleado tiene que estar comprendido entre 900 euros y 5000 euros -->
+                        <xs:simpleType>
+                          <xs:restriction base="xs:double">
+                              <xs:minInclusive value="900"/>
+                              <xs:maxInclusive value="5000"/>
+                          </xs:restriction> 
+                        </xs:simpleType>
+                    <xs:element name="direccion" minOccurs="1" maxOccurs="2">
+                    <!--La etiqueta "estaCasado" del empleado tiene que ser de autocierre y será optativa.-->
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="direccionString">
+                          <xs:simpleType>
+                              <xs:restriction base="xs:integer">
+                                <length value = "250"/>
+                              </xs:restriction>
+                          </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="pais" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <!--La etiqueta "estaCasado" del empleado tiene que ser de autocierre y será optativa.-->
+                    <xs:element name="casado" type="xs:boolean" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute name="DNI" type="xs:string" length = "8"></xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <!--La empresa podrá tener un atributo optativo que sea la fecha de creación.-->
+      <xs:attribute name="fechaCreacion" type="xs:string" minOccurs = "0"/>
+      <xs:attribute name = "pais" fixed = "españa"/>
+    </xs:complexType>
+    
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,62 @@
+/*Utiliza selectores CSS para aplicar un estilo a los elementos. Los estilos deben de estar dentro 
+de un fichero .css de tal manera que quede el html lo más limpio posible
+
+Cambia el color del texto a blanco en todos los elementos de lista del primer articulo de cada sección. 
+Se debe hacer mediante selector de clase.
+
+Aplica un fondo de color gris claro (#f0f0f0) a todos los elementos de lista del primer articulo 
+de cada sección. Se debe hacer mediante selector de clase.
+
+Cambia el color del texto a azul en todos los elementos de lista del segundo articulo de cada sección. 
+Se debe hacer mediante selector de clase.
+
+Aplica un fondo de color rojo a todos los elementos de lista del segundo articulo de cada sección. 
+Se debe hacer mediante selector de clase.
+
+La cabecera de la página (<header>) tendrá un fondo negro y un color de letra de amarillo. 
+Se debe hacer mediante un selector de etiqueta
+
+El pie de página (<footer>) tendrá un fondo azul oscuro y un tipo de letra blanco. 
+Se debe hacer mediante un selector de etiqueta.
+
+Se debe hacer dos etiquetas más (a elegir por el alumno) donde se aplique un selector por id.
+Se debe de hacer dos etiquetas más (a elegir por el alumno) donde se aplique un selector por clase y 
+por etiqueta combinado.*/
+
+.seccion1, .seccion2{
+    margin: 1%;
+}
+.main1{
+    margin: 1%;
+    color: white;
+    background-color: black;
+}
+.texto{
+    margin-left: 1%;
+}
+#imagen{
+    width: 100%;
+    height: auto;
+}
+.lista1{
+    color: rgb(0, 110, 255);
+    background-color: #f0f0f0;
+}
+.lista2{
+    background-color: #b30000;
+}
+
+a{
+    color:#000;
+    text-decoration:none;
+}
+
+header{
+    margin: 1%;
+    background-color: black;
+    color: yellow;
+}
+footer{
+    background-color: aqua;
+    color: black;
+}

@@ -1,0 +1,44 @@
+ul.ul_1 {
+    list-style-type: none;
+}
+ul .li_1::before {
+    content: url(../img/avion-de-papel.png);
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 10px;
+}
+
+ul .li_2::before {
+    content: url(../img/corazon.png);
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 10px;
+}
+
+ul .li_3::before {
+    content: url(../img/marcador.png);
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 10px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ol.ol_1{
+    list-style-type: upper-alpha;
+}
+
+ul.ul_2{
+    list-style-type: square;
+}
+ol.ol_1-ul_1{
+    list-style-type: lower-roman;
+}

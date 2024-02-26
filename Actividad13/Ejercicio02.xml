@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="biblioteca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="seccion" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="libro" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="titulo" type="xs:string"/>
+                    <xs:element name="autor" type="xs:string"/>
+                    <xs:element name="anio" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="resumen" type="xs:string"/>
+                    <xs:element name="editorial">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="codigo" type="xs:string" minOccurs="0"/>
+                          <xs:element name="nombre" type="xs:string"/>
+                          <xs:element name="ciudad" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+
+
+<biblioteca>
+    <nombre>Pedro</nombre>
+    <seccion>
+        <libro>
+            <titulo>españa</titulo>
+            <autor>junts</autor>
+            <anio>2003</anio>
+            <resumen>pues eso, que esta to wapo, con los colore los olore y los sabore, el churumbel de malaga poooom</resumen>
+            <editorial>
+                <codigo>00011</codigo>
+                <nombre>sm</nombre>
+                <ciudad>toledo</ciudad>
+            </editorial>
+        <libro/>
+    <seccion/>
+
+</biblioteca>

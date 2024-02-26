@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Se pide codificar un videojuego en XML que tenga las siguientes características.
+
+-El videojuego tendrá un identificador único, un nombre, una fecha de creación, 
+una nota (del 1 al 10), una lista de programadores, una compañía y una página web asociada.
+
+-Cada programador tendrá un identificador único, un nombre, unos apellidos, un DNI, una fecha de nacimiento y una dirección.
+    -La dirección del programador tendrá un tipo de vía, un nombre de vía, un código postal y un país.
+
+-La compañía tendrá un identificador único, un nombre, un NIF y una dirección (que tendrá el mismo formato que la del programador)
+
+-La página web asociada tendrá un HTML que se compondrá de lo siguiente:
+    -Un H1 de bienvenida, centrado
+    -Un H2 con el nombre del videojuego, de color rojo y centrado.
+    -Una imagen con la imagen del videojuego
+
+Consideraciones:
+-Los identificadores deben de ser atributos.
+-Se deben de crear 2 o 3 programadores-->
+
+<videojuego id="1">
+    <nombre>Clash of Clans</nombre>
+    <fecha>20/09/2015</fecha>
+    <nota>7</nota>
+    <programadores>
+        <programador id="A">
+            <nombre>AbduAllah</nombre>
+            <apellidos>Sadiqi</apellidos>
+            <nacimiento>01/01/2000</nacimiento>
+            <direccion id = "DireccionA">
+                <tipoVia>Calle</tipoVia>
+                <nombreVia>Real</nombreVia>
+                <codigoPostal>36004</codigoPostal>
+                <pais>Uganda</pais>
+            </direccion>
+        </programador>
+        <programador id="B">
+            <nombre>Bilal</nombre>
+            <apellidos>Ouijdi</apellidos>
+            <nacimiento>01/01/2000</nacimiento>
+            <direccion id = "DireccionB">
+                <tipoVia>Avenida</tipoVia>
+                <nombreVia>Teipei</nombreVia>
+                <codigoPostal>25103</codigoPostal>
+                <pais>Taiwan</pais>
+            </direccion>
+        </programador>
+    </programadores>
+    <company id="company1">
+        <nombre>Supercell</nombre>
+        <nif>000000012X</nif>
+        <direccion id = "DireccionCompany">
+            <tipoVia>Plaza</tipoVia>
+            <nombreVia>Plaza de Kim Jong Un</nombreVia>
+            <codigoPostal>28130</codigoPostal>
+            <pais>South Korea</pais>
+        </direccion>
+    </company>
+    <web>supercell.com</web>
+    <codigoHTML>
+        <![CDATA[
+            <html>
+                <head>
+                    <style type="text/css">
+                        h1 {
+                            text-align: center;
+                        }
+                        h2 {
+                            text-align: center;
+                            color: red;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Hola!!!</h1>
+                    <h2>CoC</h2>
+                    <img enlace = "https://www.reddit.com/media?url=https%3A%2F%2Fexternal-preview.redd.it%2FTML-is8gc4c1mqjODxhnFwtYIhZgNutMx-JPZOjb0yE.jpg%3Fwidth%3D640%26crop%3Dsmart%26auto%3Dwebp%26s%3D488530f38602723f5bb040945dda103cfa0c87b6">
+                </body>
+            </html>
+        ]]>
+    </codigoHTML>
+</videojuego>

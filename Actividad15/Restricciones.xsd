@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--Codifica un XSD basándote en la siguiente definición. Luego haz un XML que cumpla el XSD.
+
+Tendremos el nodo raíz ciudad. Una ciudad tendrá un nombre, un código de identificador, una población, un alcalde y unos funcionarios.
+El nombre de la ciudad tendrá que empezar por Mayúscula y tendrá que tener entre 3 y 20 caracteres
+El código de identificador irá como atributo y tendrá que empezar por dos caracteres no numéricos, luego un guion y luego entre 2 y 5 dígitos.
+La población tendrá que estar entre 100 y 100000.
+
+El alcalde tendrá un nombre, unos apellidos, una edad, un teléfono, una tarjeta de crédito y un correo electrónico.
+El nombre tendrá que empezar por mayúscula y tener como máximo 10 caracteres.
+El apellido podrá tener espacios entre medias, pero máximo 2 apellidos (Ej: Gomez Perez).
+La edad irá como atributo y será máximo 120 y mínimo 18.
+El teléfono tendrá que tener formato internacional y empezar por 34. Luego tendrá que tener 9 dígitos. (Ej:+34661435678)
+El correo electrónico tendrá que ser valido según la w3c.
+
+Los funcionarios irán dentro de una etiqueta "funcionarios" y podrá haber muchos funcionarios (mínimo 1). 
+Los funcionarios tendrán un id, un nombre y apellidos (en la misma etiqueta), un código postal, una fecha de nacimiento, una contraseña y un número de cuenta bancaria.
+El id irá como atributo y será  alfanumérico de hasta 10 caracteres
+El nombre y apellidos tendrá una longitud máxima de 50
+El código postal tiene que ser valido (Ej: 09876)
+La fecha de nacimiento tendrá que ser con el formato "DD/MM/YYYY"
+La contraseña tendrá que empezar por mayúscula, luego entre 1 y N veces dos dígitos consecutivos, 
+luego uno de los siguientes caracteres (%$&@!) y por último debe de tener una longitud mínima de 10.
+El número de cuenta bancaria debe de empezar por "ES" y luego tener 12 dígitos. Cada 4 dígitos tiene que haber un espacio en blanco.-->
+
+    <xs:element name="ciudad">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- El DNI debe de tener 9 caracteres -->
+                <xs:element name="nombre">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[A-Z]"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- El nombre debe de tener una longitud entre 3 y 25 caracteres -->
+                <xs:element name="id">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="3"/>
+                            <xs:maxLength value="25"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- La edad debe de estar comprendida entre 1 y 19999-->
+                <xs:element name="población">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"></xs:minInclusive>
+                            <xs:maxExclusive value="20000"></xs:maxExclusive>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Los super heroes solo pueden ser de MARVEL o de DC-->
+                <xs:element name="alcalde">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="DC"></xs:enumeration>
+                            <xs:enumeration value="MARVEL"></xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+            <!-- Tambien podemos poner restricciones a los atributos, en este caso el código
+                tiene que estar en la etiqueta raíz y tiene como máximo 3 digitos -->
+            <xs:attribute name="funcionarios" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="3"></xs:totalDigits>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

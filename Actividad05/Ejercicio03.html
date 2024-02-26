@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #fdfeff;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d45bb;
+    padding-left: 2vw;
+    color: #fff;
+}
+
+.cont-ul {
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.5vw;
+    transition:  all .3s ease 0s;
+}
+
+li:hover {
+    background-color: #333333;
+}
+
+.develop {
+    position: relative;
+}
+
+.ul-second {
+    display: none;
+    position: absolute;
+    margin-top: 1.5vw;
+}
+
+.ul-second > li {
+    width: 190px;
+    transform: translateX(-20px);
+    border-bottom:solid 1px #fff ;
+    text-align: center;
+    background-color: #24252a;
+}
+
+.ul-second > li:hover {
+    background-color: #333333;
+}
+
+.develop:hover > .ul-second {
+    display: block;
+}
+.img_01{
+    
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    width: 400;
+    aspect-ratio: auto 422 / 900;
+    height: auto;
+}
+.img_02{
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    width: 400;
+    aspect-ratio: auto 421 / 900;
+    height: auto;
+}
+.ul-third {
+    position: absolute;
+    transform: translateX(100%);
+    right: 0;
+    top: 40%;
+    display: none;
+    background-color: #24252a;
+}
+
+.ul-third > li {
+    padding: 1.5vw;
+    border-bottom: solid 1px #fff;
+}
+
+.front:hover > .ul-third {
+    display: block;
+}
+.h1_1{
+    padding: 1.5vw;
+    background-color: #000000;
+    color: #fff;
+}
+@media (max-width:900px) {
+    .logo-danicodex {
+        display: none;
+    }
+}
+    </style>
+</head>
+<body>
+    <!--Ejercicio 3: Crea una página web sobre tu pasatiempo favorito o un tema que te interese. 
+        Utiliza al menos las etiquetas semánticas de HTML5 vistas en clase, como <header>, <nav>, <section>, <article>, <aside>, y <footer>, para organizar el contenido de tu página. 
+        Asegúrate de que tu página tenga un encabezado, una navegación, al menos dos secciones, dos artículos por sección, y un pie de página. 
+        Puedes agregar contenido ficticio o real a cada sección.
+        En la parte de <header> debe de haber al menos una foto y una cabecera sobre su sitio web.
+        En la parte <nav> debe de haber al menos  2 enlaces, uno a esta página web y otra a otra página web tuya que se llame "sobre_nosotros.html". 
+        En dicha página web se mostrará una cabecera y unos párrafos que hable son nosotros. 
+        También se incluirá la navegación de la página principal para que pueda volver a ella.
+        En la parte  <section> y <article> se deben incluir al menos 2 secciones y 2 artículos.
+        En la parte de <aside> debe de contener alguna imagen de la parte publicitada que al pulsar en ella te lleve a su página web.
+        En la parte de <footer> se pondrá un texto de "copyright" y un enlace que nos lleve a la navegación de la página.
+        En tu página debes utilizar alguna propiedad CSS vista en clase para darle un aspecto atractivo.
+        Siempre que se pueda las URLs se harán de manera relativa.-->
+
+        <header>
+            <h1 class="h1_1">SI! ESTE ES MI HOBBY</h1>
+            <nav>
+                <a href="Ejercicio03.html"><img src="img/2560px-El_Pais_logo_2007.svg.png" alt="logotipo" style="height: auto; width: 100px;"></a>
+                <ul class="cont-ul">
+                    <li>BLOG</li>
+                    <li>INFORMACION</li>
+                    <li class="develop">
+                        DESARROLLADOR 
+                        <ul class="ul-second">
+                            <li class="back">Back-End</li>
+                            <li class="front">
+                                Front-End
+                                <ul class="ul-third">
+                                    <li>CSS</li>
+                                    <li>HTML</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </li>
+                            <li>Full-Stack</li>
+                        </ul>
+                    </li>
+                    <li>COMPANY</li>
+                    <li>CONTACT</li>
+                </ul>
+            </nav>
+        </header>  
+        <section>
+            <article>
+                <h3>Internacional</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum, 
+                    enetur itaque ea perspiciatis aliquid, 
+                    provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio, accusantium?</p>
+            </article>
+            <article>
+                <h3>Nacional</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum, 
+                    enetur itaque ea perspiciatis aliquid, 
+                    provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio, accusantium?</p>
+            </article>
+            <article>
+                <h3>Deporte</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum, 
+                    enetur itaque ea perspiciatis aliquid, 
+                    provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio, accusantium?</p>
+            </article>
+            <article>
+                <h3>Ciencia</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum, 
+                    enetur itaque ea perspiciatis aliquid, 
+                    provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio, accusantium?</p>
+            </article>
+        </section> 
+        <br>
+        <hr>
+        <br>
+        <div>
+            <section>
+                <article>
+                    <h3>Internacional</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum,
+                        enetur itaque ea perspiciatis aliquid,
+                        provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio,
+                        accusantium?</p>
+                </article>
+                <article>
+                    <h3>Nacional</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum,
+                        enetur itaque ea perspiciatis aliquid,
+                        provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio,
+                        accusantium?</p>
+                </article>
+                <article>
+                    <h3>Deporte</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum,
+                        enetur itaque ea perspiciatis aliquid,
+                        provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio,
+                        accusantium?</p>
+                </article>
+                <article>
+                    <h3>Ciencia</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reprehenderit illum deleniti ipsum,
+                        enetur itaque ea perspiciatis aliquid,
+                        provident delectus praesentium consectetur expedita. Id quisquam numquam sit aspernatur! Optio,
+                        accusantium?</p>
+                </article>
+            </section>
+        </div>
+        <br>
+        <br>
+        <aside class="img_01">
+            <a href="https://www.lego.com/es-es/product/bugatti-chiron-42083?age-gate=grown_up" target="_blank"><img src="img/450_1000 (1).jpg" alt="coche"></a>
+            <a href="https://www.lego.com/es-es/product/bugatti-chiron-42083?age-gate=grown_up" target="_blank"><img src="img/450_1000.jpg" alt="coche"></a>
+        </aside>
+        <footer>
+            <a href="https://twitter.com/"><img id="twitter" src="img/twitter.png" alt="Twitter"></a>
+            <a href="https://www.pinterest.es/"><img id="pinterest" src="img/pinterest.png" alt="Pinterest"></a>
+            <a href="https://www.facebook.com/"><img id="facebook" src="img/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/"><img id="instagram" src="img/instagram.png" alt="Instagram"></a>
+            <p>Derechos reservados &copy;</p>
+        </footer>
+</body>
+</html>

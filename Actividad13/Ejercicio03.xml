@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!--Codifica un XSD y un DTD basándote en la siguiente definición. Toda la información se hará con nodos elemento. 
+Nótese que habrá cosas que podamos hacer con DTD que no podamos hacer con XSD y a la inversa.
+Tendremos el nodo raíz empresa. Una empresa tendrá un nombre, un NIF, si es española o no (boolean), un capital social, una dirección y empleados.
+La dirección de la empresa tendrá un tipo de vía, un nombre de vía, un CP y un país. Tiene que ser obligatoria.
+Los empleados irán dentro de una etiqueta "empleados" que tendrá que estar obligatoriamente, y podrán tener muchas etiquetas "empleado", pero mínimo 1.
+Cada empleado tendrá un nombre, dos o mas apellidos, un DNI, si es extranjero o no (boolean), una fecha de nacimiento, 
+un salario, una o dos etiqueta dirección y podrá tener o no la etiqueta esta casado (boolean).
+La dirección del empleado tendrá que tener la dirección en string (Ej: "C\Gran via 67, Madrid") y el pais, ambas etiquetas tendrán que estar pero no importa el orden.
+El capital social podrá tener uno de los elementos siguientes, "euros", "dolares" o "yenes", pero solo uno de los 3. El tipo será double.
+Crear la entidad "españa" que tenga el texto "ESPAÑA" y utilizarla en un páis.-->
+
+  <xs:element name="empresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="NIF" type="xs:string"/>
+        <xs:element name="espanola" type="xs:boolean"/>
+        <xs:element name="capitalSocial">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:double">
+                <xs:attribute name="tipo" use="required">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="euros"/>
+                      <xs:enumeration value="dolares"/>
+                      <xs:enumeration value="yenes"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="direccion" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipoVia" type="xs:string"/>
+              <xs:element name="nombreVia" type="xs:string"/>
+              <xs:element name="CP" type="xs:string"/>
+              <xs:element name="pais" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="empleados">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="empleado" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+                    <xs:element name="DNI" type="xs:string"/>
+                    <xs:element name="extranjero" type="xs:boolean"/>
+                    <xs:element name="fechaNacimiento" type="xs:date"/>
+                    <xs:element name="salario" type="xs:double"/>
+                    <xs:element name="direccion" minOccurs="1" maxOccurs="2">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="direccionString" type="xs:string"/>
+                          <xs:element name="pais" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="casado" type="xs:boolean" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="espana" type="xs:string"/>
+
+</xs:schema>
+
+ 

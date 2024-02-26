@@ -1,0 +1,19 @@
+* {
+    border: 5px solid red;
+    padding: 5px;
+}
+
+p.tnr{
+    border: 3px solid blue;
+}
+h1{
+    border-color: blue;
+    border-width: 3px;
+    border-style: solid; 
+}
+#especial{
+    border-top: 3px solid rgb(13, 13, 110);
+    border-right: 3px dashed rgb(119, 119, 119);
+    border-bottom: 3px dotted green;
+    border-left: 3px groove rgb(255, 0, 0);
+}

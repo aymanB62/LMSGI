@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio01</title>
+</head>
+<body>
+    <h1>Formulario de pizzeria</h1>
+    <form action="procesarPeticion.jsp" method="post">
+        <fieldset>
+            <legend>Datos personales:</legend>
+            <label for="nombre">Nombre: </label>
+            <input type="text" placeholder="Introduzca su nombre" name = "nombre" id ="nombre" required>
+        </br>
+        </br>
+            <label for="password">Contraseña: </label>
+            <input type="password" placeholder="" name ="password" id ="password">
+        </br>
+        </br>
+            <label for="direccion">Direccion de Entrega: </label>
+            <input type="text" placeholder="Dirección de entrega" name ="direccion" id ="direccion" required>
+        </br>
+        </br>
+            <label for="telefono">Numero de telefono: </label>
+            <input type="tel" placeholder="Telephone" name ="telefono" id ="telefono" required> 
+        </br>
+        </br>
+            <label for="correo">Correo electrónico: </label>
+            <input type="email" placeholder="Correo electrónico" name ="correo" id ="correo" >
+        </br>
+        </br>
+            <label for="edad">Edad: </label>
+            <input type="number" placeholder="" name ="edad" id ="edad" required>
+        </br>
+        </br>
+            <label for="tipoPizza">Tamaño de la pizza</label>
+        </br>
+        </br>
+            <input type="radio" name ="tipoPizza" id ="pequeña" value="P">Pequeña (8 pulgadas)</br>
+            <input type="radio" name ="tipoPizza" id ="mediana" value="M">Mediana (12 pulgadas)</br>
+            <input type="radio" name ="tipoPizza" id ="grande" value="G">Grande (16 pulgadas)</br>
+        </br>
+            <label for="tipoMasa">Tipo de masa</label>
+        </br>
+        </br>
+            <input type="radio" name ="tipoMasa" id ="fina" value="F">Masa fina</br>
+            <input type="radio" name ="tipoMasa" id ="normal" value="N">Masa normal</br>
+            <input type="radio" name ="tipoMasa" id ="gruesa" value="G">Masa gruesa</br>
+        </br>
+            <label for="ingredientes">Selecciona tus ingredientes (Puedes elegir múltiples)</label>
+        </br>
+        </br>
+            <input type="checkbox" name ="ingredientes" id ="pepperoni" value="P">Pepperoni</br>
+            <input type="checkbox" name ="ingredientes" id ="judiasVerdes" value="J">Judías verdes</br>
+            <input type="checkbox" name ="ingredientes" id ="jamon" value="J">Jamón</br>
+            <input type="checkbox" name ="ingredientes" id ="alcaparras" value="AL">Alcaparras</br>
+            <input type="checkbox" name ="ingredientes" id ="aceituna" value="AC">Aceitunas</br>
+            <input type="checkbox" name ="ingredientes" id ="cebolla" value="C">Cebolla</br>
+            <input type="checkbox" name ="ingredientes" id ="salchicha" value="S">Salchicha</br>
+            <input type="checkbox" name ="ingredientes" id ="piña" value="PI">Piña</br>
+        </br>
+            <label for="salsa">Tipo de salsa</label> 
+        </br>
+        </br>
+            <input type="radio" name="salsa" value="O"/>Tomate<br />
+            <input type="radio" name="salsa" value="O"/>Barbacoa<br />
+            <input type="radio" name="salsa" value="O"/>Pesto<br />
+            <input type="radio" name="salsa" value="O"/>Sin salsa</br>
+        </br>        
+        <label for="Texto">Indicaciones sobre el pedido</label><br/>
+        <textarea style="resize: none;" rows="5" cols="90" name="Indicaciones"></textarea>
+        </br>
+        </br>
+        <label for="metodo de pago">metodo de pago</label>
+        <select name="pago">
+            <option value="EFE">Efectivo</option>
+            <option value="TAR">Tarjeta</option>
+            <option value="PAY">Paypal</option>
+        </select>
+        </br>
+        </br>
+
+        <input type="submit" value="ENVIAR PEDIDO" />
+        <input type="reset" value="NUEVO PEDIDO" />
+    </fieldset> 
+    </form>
+</body>
+</html>

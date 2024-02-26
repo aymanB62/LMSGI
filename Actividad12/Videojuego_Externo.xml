@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<videojuego id="Dk1" nota="10" compañia="Upgrade Studios">
+    
+    <nombre>Max Paine</nombre>
+    <fecha_creacion>18/06/2001</fecha_creacion>
+    <programadores>
+
+        <programador id="A87">
+            <nombres>Joselyn</nombres>
+            <apellidos>Flores xd</apellidos>
+            <DNI>65684882</DNI>
+            <fecha_nacimiento>10/11/1988</fecha_nacimiento>
+            <direccion>
+                <via>24</via>
+                <nombre_via>ola pero ola de hola si no ola de mar</nombre_via>
+                <cod_postal>050007</cod_postal>
+                <pais>Rumanía</pais>
+            </direccion>
+        </programador>
+
+        <programador id="BR12">
+            <nombres>Lucas</nombres>
+            <apellidos>Pelucas</apellidos>
+            <DNI>31515989</DNI>
+            <fecha_nacimiento>29/09/2005</fecha_nacimiento>
+            <direccion>
+                <via>114</via>
+                <nombre_via>Uganda</nombre_via>
+                <cod_postal>100058</cod_postal>
+                <pais>Madagascar</pais>
+            </direccion>
+        </programador>
+    </programadores>
+
+    <compania_total>
+        <compania id="M836l">
+            <nombre_compania>Upgrade Studios</nombre_compania>
+            <NIF>175164B</NIF>
+            <direccion>
+                <via>114</via>
+                <nombre_via>Islas Malarias</nombre_via>
+                <cod_postal>104457</cod_postal>
+                <pais>Simbawe</pais>
+            </direccion>
+        </compania>
+    </compania_total>
+
+</videojuego>

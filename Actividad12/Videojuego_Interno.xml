@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE videojuego [
+    <!ELEMENT videojuego (nombre,fecha_creacion,programadores, compania_total)>
+
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT fecha_creacion (#PCDATA)>
+    <!ELEMENT programadores (programador+)>
+
+    <!ELEMENT programador (nombres,apellidos,DNI,fecha_nacimiento,direccion)>
+    <!ELEMENT nombres (#PCDATA)>
+    <!ELEMENT apellidos (#PCDATA)>
+    <!ELEMENT DNI (#PCDATA)>
+    <!ELEMENT fecha_nacimiento (#PCDATA)>
+    <!ELEMENT direcciones (direccion+)>
+
+    <!ELEMENT direccion (via,nombre_via,cod_postal,pais)>
+    <!ELEMENT via (#PCDATA)>
+    <!ELEMENT nombre_via (#PCDATA)>
+    <!ELEMENT cod_postal (#PCDATA)>
+    <!ELEMENT pais (#PCDATA)>
+
+    <!ELEMENT compania_total (compania+)>
+    <!ELEMENT compania (nombre_compania, NIF, direccion)>
+    <!ELEMENT nombre_compania (#PCDATA)>
+    <!ELEMENT NIF (#PCDATA)>
+
+
+    <!-- Atributos -->
+
+    <!ATTLIST videojuego id ID #REQUIRED>
+    <!ATTLIST videojuego nota CDATA #REQUIRED>
+    <!ATTLIST videojuego compañia CDATA #REQUIRED>
+
+    <!ATTLIST programador id ID #REQUIRED>
+
+    <!ATTLIST compania id ID #REQUIRED>    
+]>
+<videojuego id="Dk1" nota="10" compañia="Upgrade Studios">
+    
+    <nombre>Dark Souls</nombre>
+    <fecha_creacion>12/05/2014</fecha_creacion>
+    <programadores>
+
+        <programador id="A10">
+            <nombres>Damian</nombres>
+            <apellidos>Martinez Meneces</apellidos>
+            <DNI>15659435</DNI>
+            <fecha_nacimiento>25/05/1998</fecha_nacimiento>
+            <direccion>
+                <via>45</via>
+                <nombre_via>ola caracola</nombre_via>
+                <cod_postal>05006</cod_postal>
+                <pais>Republica del Congo</pais>
+            </direccion>
+        </programador>
+
+        <programador id="A12">
+            <nombres>Alexander</nombres>
+            <apellidos>Castillo Mendoza</apellidos>
+            <DNI>25635978</DNI>
+            <fecha_nacimiento>05/11/2001</fecha_nacimiento>
+            <direccion>
+                <via>114</via>
+                <nombre_via>Islas Malarias</nombre_via>
+                <cod_postal>104457</cod_postal>
+                <pais>Simbawe</pais>
+            </direccion>
+        </programador>
+    </programadores>
+
+    <compania_total>
+        <compania id="A12342">
+            <nombre_compania>Upgrade Studios</nombre_compania>
+            <NIF>175164B</NIF>
+            <direccion>
+                <via>114</via>
+                <nombre_via>Islas Malarias</nombre_via>
+                <cod_postal>104457</cod_postal>
+                <pais>Simbawe</pais>
+            </direccion>
+        </compania>
+    </compania_total>
+
+</videojuego>
