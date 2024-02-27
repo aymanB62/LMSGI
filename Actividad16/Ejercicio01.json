@@ -1,0 +1,43 @@
+{"videojuego" : {
+    "nombre" : "Clash of Clans",
+    "fecha" : "20/09/2015",
+    "nota" : 7,
+    "programadores" :[
+        {"programador1" : {
+            "nombre":"AbduAllah",
+            "apellidos": "Sadiqi",
+            "nacimiento":"01/01/2000",
+            "direccion":{
+                "tipoVia":"Calle",
+                "nombreVia":"Real",
+                "codigoPostal":"36004",
+                "pais":"Uganda"
+            }
+            }
+        },
+        {"programador2" : {
+            "nombre":"Bilal",
+            "apellidos": "Ouijdi",
+            "nacimiento":"01/01/2000",
+            "direccion":{
+                "tipoVia":"Avenida",
+                "nombreVia":"Teipei",
+                "codigoPostal":"25103",
+                "pais":"Taiwan"
+            }
+            }
+        }
+    ],
+    "compania":{
+        "nombre":"Supercell",
+        "nif":"000000012X",
+        "direccion":{
+            "tipoVia":"Plaza",
+            "nombreVia":"Plaza de Kim Jong Un",
+            "codigoPostal":"28130",
+            "pais":"South Korea"
+        }
+    },
+    "web":"supercell.com"
+    }   
+}
