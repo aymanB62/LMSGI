@@ -24,55 +24,129 @@ La contraseña tendrá que empezar por mayúscula, luego entre 1 y N veces dos d
 luego uno de los siguientes caracteres (%$&@!) y por último debe de tener una longitud mínima de 10.
 El número de cuenta bancaria debe de empezar por "ES" y luego tener 12 dígitos. Cada 4 dígitos tiene que haber un espacio en blanco.-->
 
-    <xs:element name="ciudad">
+        <xs:element name="ciudad">
         <xs:complexType>
             <xs:sequence>
-                <!-- El DNI debe de tener 9 caracteres -->
                 <xs:element name="nombre">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:pattern value="[A-Z]"/>
+                            <xs:pattern value="[A-Z]{1}[a-z]{3,20}"></xs:pattern>
                         </xs:restriction>
                     </xs:simpleType>
-                </xs:element>
-                <!-- El nombre debe de tener una longitud entre 3 y 25 caracteres -->
-                <xs:element name="id">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:minLength value="3"/>
-                            <xs:maxLength value="25"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <!-- La edad debe de estar comprendida entre 1 y 19999-->
-                <xs:element name="población">
+                </xs:element> 
+                <xs:element name="poblacion">
                     <xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:minInclusive value="1"></xs:minInclusive>
-                            <xs:maxExclusive value="20000"></xs:maxExclusive>
+                            <xs:minInclusive value="100"/>
+                            <xs:maxInclusive value="100000"/>
                         </xs:restriction>
                     </xs:simpleType>
-                </xs:element>
-
-                <!-- Los super heroes solo pueden ser de MARVEL o de DC-->
+                </xs:element> 
                 <xs:element name="alcalde">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:enumeration value="DC"></xs:enumeration>
-                            <xs:enumeration value="MARVEL"></xs:enumeration>
-                        </xs:restriction>
-                    </xs:simpleType>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="[A-Z]{1}[a-z]{1,9}"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="apellido">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="[A-Z]{1}[a-z]*\s[A-Z]{1}[a-z]*"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="telefono">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="\+34\d{9}"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="correoElectronico">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="edad" use="required">
+                            <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="18"/>
+                                <xs:maxInclusive value="120"/>
+                            </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element> 
+                <xs:element name="funcionarios">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="funcionario" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombreCompleto">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="50"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="codigoPostal">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:pattern value="\d{5}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element> 
+                                        <xs:element name="fechaNacimiento">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="\d{2}\/\d{2}\/\d{4}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element> 
+                                        <xs:element name="contraseña">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="[A-Z](\d{2})+[%$@!]"></xs:pattern>
+                                                    <xs:minLength value="10"></xs:minLength>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element> 
+                                        <xs:element name="numeroCuenta">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="ES\d{4}\s\d{4}\s\d{4}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required">
+                                        <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:pattern value="[\da-zA-Z]{1,10}"/>
+                                        </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence> 
+                    </xs:complexType>
                 </xs:element>
-            </xs:sequence>
-            <!-- Tambien podemos poner restricciones a los atributos, en este caso el código
-                tiene que estar en la etiqueta raíz y tiene como máximo 3 digitos -->
-            <xs:attribute name="funcionarios" use="required">
+            </xs:sequence> 
+            <xs:attribute name="codigoIdentificador" use="required">
                 <xs:simpleType>
-                    <xs:restriction base="xs:integer">
-                        <xs:totalDigits value="3"></xs:totalDigits>
-                    </xs:restriction>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="\D\D-[\d]{2,5}"/>
+                </xs:restriction>
                 </xs:simpleType>
-            </xs:attribute>
+            </xs:attribute> 
         </xs:complexType>
     </xs:element>
 </xs:schema>
