@@ -29,10 +29,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        function contarNumerosPares() {
+            let inicio = parseInt(document.getElementById('inicio').value);
+            let fin = parseInt(document.getElementById('fin').value);
+            let contador = 0;
+
+            for (let i = inicio; i <= fin; i++) {
+                if (i % 2 === 0) {
+                    contador++;
+                }
+            }
+
+            document.getElementById('resultado').innerText = `La cantidad de números pares entre ${inicio} y ${fin} es: ${contador}`;
+        }
     </script>
 </head>
-
 <body>
-    
+    <h3>Contador de Números Pares</h3>
+    <label for="inicio">Inicio:</label> <input type="number" id="inicio"> </br></br>
+    <label for="fin">Fin:</label> <input type="number" id="fin"> </br></br>
+    <button onclick="contarNumerosPares()">Contar Números Pares</button>
+    <p id="resultado"></p>    
 </body>
 </html>

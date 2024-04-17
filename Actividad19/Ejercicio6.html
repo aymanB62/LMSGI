@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificador de Números Primos</title>
+<script>
+    function verificarPrimo() {
+        var numero = parseInt(document.getElementById('numero').value);
+
+        if (numero <= 1) {
+            document.getElementById('resultado').textContent = "Por favor, ingrese un número mayor que 1.";
+            return;
+        }
+
+        var esPrimo = true;
+
+        for (var i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i === 0) {
+                esPrimo = false;
+                break;
+            }
+        }
+
+        if (esPrimo) {
+            document.getElementById('resultado').textContent = numero + " es un número primo.";
+        } else {
+            document.getElementById('resultado').textContent = numero + " no es un número primo.";
+        }
+    }
+</script>
+</head>
+<body>
+    <h1>Verificador de Números Primos</h1>
+    <label for="numero">Ingrese un número:</label>
+    <input type="number" id="numero">
+    <button onclick="verificarPrimo()">Verificar</button>
+
+    <p id="resultado"></p>
+</body>
+</html>

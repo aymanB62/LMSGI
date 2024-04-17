@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Juego adivina el número: Crea un juego donde el programa genera un número aleatorio y el usuario tiene que adivinarlo. 
+        El programa debe dar pistas como "muy alto" o "muy bajo" hasta que el usuario adivine. Investigar como usar la clase Random en JS. -->
+
+    <script>
+        let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+        let intentos = 0;
+
+        function adivinarNumero() {
+            const conjetura = parseInt(document.getElementById('guess').value);
+            intentos++;
+
+            if (conjetura === numeroSecreto) {
+                document.getElementById('mensaje').textContent = `¡Felicidades! Adivinaste el número en ${intentos} intentos.`;
+            } else if (conjetura < numeroSecreto) {
+                document.getElementById('mensaje').textContent = 'Muy bajo. Intenta de nuevo.';
+            } else {
+                document.getElementById('mensaje').textContent = 'Muy alto. Intenta de nuevo.';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Juego de Adivinanzas de Números</h1>
+    <p>Intenta adivinar el número secreto entre 1 y 100.</p>
+    <input type="number" id="guess" placeholder="Ingresa tu conjetura">
+    <button onclick="adivinarNumero()">Adivinar</button>
+    <p id="mensaje"></p>
+</body>
+
+</html>

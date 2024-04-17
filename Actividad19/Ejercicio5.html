@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autenticación de Usuario</title>
+<script>
+    function autenticar() {
+        var usuario = document.getElementById('usuario').value;
+        var contrasena = document.getElementById('contrasena').value;
+
+        if (usuario === "goku" && contrasena === "Vegeta777") {
+            alert("¡Bienvenido!");
+        } else {
+            alert("Contraseña incorrecta.");
+        }
+    }
+</script>
+</head>
+<body>
+    <h1>Autenticación de Usuario</h1>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" placeholder="Ingrese su usuario"><br><br>
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" placeholder="Ingrese su contraseña"><br><br>
+    <button onclick="autenticar()">Ingresar</button>
+</body>
+</html>
